@@ -237,7 +237,13 @@
                                             <h6 style="background-color: lightskyblue;"><?php echo $row['DichVu']; ?></h6>
                                         </a>
                                         <p style="color: grey;font-size: 13px;">
-                                        <?php echo $row['Mô Tả']; ?>
+                                        <?php 
+                                        
+                                        $str = $row['Mô Tả']; 
+                                        $ls_str = explode("\n", $str);
+                                        echo $ls_str[0];
+                                        
+                                        ?>
                                         </p>
                                         
                                         <p style="font-size: 20px;"><span class="old-price"></span><?php echo $row['DonGia']; ?></p>

@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Thông tin Bác Sĩ - Bùi Đăng Khoa</title>
+    <title>Thông tin khách hàng</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/logomedial.png">
@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style1.css">
 
-
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="inforstyle.css">
 </head>
 
 <body>
@@ -140,72 +142,58 @@
                             while ($row = $result->fetch_assoc()) {
                                 
                             ?>
-                 
-                <img src='img\core-img\KH.png' alt="">
-                
-                           
-                            <div class="single_product_desc clearfix">
-                                <span>Thông Tin Bác Sĩ</span>
-                                <a href="<?php echo 'ThongTinKhachHang.php ?id='. $_GET['id'] ?>">
-                                    <h2><?php echo $row['HoVaTen']; ?></h2>
-                                </a>
-                                
-                                <p style="padding-left: 30px;font-size: 20px;color: crimson;">
-                                    <!--if sp list -->
-                                    1.&nbsp;&nbsp;&nbsp;
-                                    "<?php echo $row['DiaChi']; ?>"
-                                </p>
-                                <p style="padding-left: 30px;font-size: 20px;color: crimson;">
-                                    <!--if sp list -->
-                                    2.&nbsp;&nbsp;&nbsp;
-                                    "SDT : <?php echo $row['SDT']; ?>"
-                                </p>
-                                <p style="padding-left: 30px;font-size: 20px;color: crimson;">
-                                    <!--if sp list -->
-                                    3.&nbsp;&nbsp;&nbsp;
-                                    "Gmail : <?php echo $row['DiaChiMail']; ?>"
-                                </p>
-                                <p style="padding-left: 30px;font-size: 20px;color: crimson;">
-                                    <!--if sp list -->
-                                    4.&nbsp;&nbsp;&nbsp;
-                                    "DichVu : <?php echo $row['DichVu']; ?>"
-                                </p>
-                                <p style="padding-left: 30px;font-size: 20px;color: crimson;">
-                                    <!--if sp list -->
-                                    5.&nbsp;&nbsp;&nbsp;
-                                    "LichHen : <?php echo $row['LichHen']; ?>"
-                                </p>
-                                <p style="padding-left: 30px;font-size: 20px;color: crimson;">
-                                    <!--if sp list -->
-                                    6.&nbsp;&nbsp;&nbsp;
-                                    "Tong : <?php echo $row['Tong']; ?>"
-                                </p>
-                            
-                            
-                            
-                            
-                                <p class="product-desc">"Cảm Ơn Bạn Đã Sử Dụng Dịch Vụ Của Chúng Tôi"</p>
-
-                                                   
-                                                
-                            
-
-            <!-- Form -->
-            <form class="cart-form clearfix" method="post">
-                <!-- Select Box -->
-               
-                <!-- Cart & Favourite Box -->
-                <div class="cart-fav-box d-flex align-items-center">
-                    <!-- Cart -->
-                    <button onclick="location.href='PhatTrien.php'" type="button">
-                        Xem Kết Quả</button>
-                    <!-- Favourite -->
-                    <div class="product-favourite ml-4">
-                        <a href="#" class="favme fa fa-heart"></a>
-                    </div>
+                 <div class="modal">
+        <img src="img\core-img\KH.png" alt="">
+        <div class="close"></div>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="hamburger-menu">
+                    <div class="center"></div>
                 </div>
-            </form>
-                
+                <a href="#" class="mail">
+                    <i class="far fa-envelope"></i>
+                </a>
+                <div class="main">
+                    <div class="image">
+                        <div class="">
+                            <img src="img/core-img/KH.png" alt="">
+                        </div>
+                    </div>
+                    <h3 class="name"><?php echo $row['HoVaTen']; ?></h3>
+                    <h3 class="sub-name"><?php echo $row['DiaChiMail']; ?></h3>
+                    
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="left">
+                <div class="about-container">
+                        <h3 class="title">Info </h3>
+                        <p class="text">Địa chỉ : <?php echo $row['DiaChi']; ?></p>
+                        <p class="text"> SDT : <?php echo $row['SDT']; ?></p>
+                    </div>
+
+                <div class="about-container">
+                        <h3 class="title">About</h3>
+                        <p class="text">Dịch Vụ : <?php echo $row['DichVu']; ?></p>
+                        <p class="text">Lịch Hẹn : <?php echo $row['LichHen']; ?></p>
+                        <p class="text">Tổng : <?php echo $row['Tong']; ?></p>
+                        <button>Kết Quả</button>
+                        
+                    </div>
+                   
+                    
+                </div>
+
+               
+            </div>
+        </div>
+    </div>
+
+                             
             <?php
                             }
                         
@@ -218,85 +206,9 @@
     <!-- ##### Single Product Details Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
-    <footer class="footer_area clearfix" style="height: 450px;">
-        <div class="container">
-            <div class="row">
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area d-flex mb-30">
-                        <!-- Logo -->
-                        <div class="footer-logo mr-50">
-                            <a href="#"><img src="img/core-img/logomedial.png"width ="70px" alt="abc"></a>
-                        </div>
-                        <!-- Footer Menu -->
-                        <div class="footer_menu">
-                            <ul>
-                                
-                                <li><a href="index.php"><p style="font-size: 20px;color: gainsboro;"> YourDoctor </p></a></li>
-                                <li><a href="hoidap.php"><p style="font-size: 20px;color: gainsboro;"> Hỏi Đáp </p></a></li>
-                                <li><a href="lienhe.php"><p style="font-size: 20px;color: gainsboro;"> Liên Hệ </p></a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area mb-30">
-                        <h3 style="color: white;padding-left: 30px;">
-                               Dịch Vụ 
-                        </h3>
-                        <a href="hoidap.php"><p style="font-size: 20px;color: gainsboro;"> Tra Cứu Triệu Chứng <img src="img/core-img/TimKiem.png"width="30px" alt=""></p></a>
-                        <a href="DichVu.php"><p style="font-size: 20px;color: gainsboro;">Đặt Lịch hẹn Khám Tổng Quát <img src="img/core-img/DichVu.png"width="30px" alt=""></p></a>
-                        <a href="hoidap.php"><p style="font-size: 20px;color: gainsboro;">Đặt Câu hỏi Với Bác Sĩ                            <img src="img/core-img/QSA.png"width="30px" alt=""></p></a>
-                            
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div class="row align-items-end">
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area">
-                        <div class="footer_heading mb-30">
-                            <h6>Subscribe</h6>
-                        </div>
-                        <div class="subscribtion_form">
-                            <form action="#" method="post">
-                                <input type="email" name="mail" class="mail" placeholder="Your email here">
-                                <button type="submit" class="submit"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area">
-                        <div class="footer_social_area">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true" style="font-size: 30px;"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"style="font-size: 30px;"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"style="font-size: 30px;"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"style="font-size: 30px;"></i></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i class="fa fa-youtube-play" aria-hidden="true"style="font-size: 30px;"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-<div class="row mt-5">
-                <div class="col-md-12 text-center">
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </footer>
+    
     <!-- ##### Footer Area End ##### -->
+    <script src="app.js"></script>
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

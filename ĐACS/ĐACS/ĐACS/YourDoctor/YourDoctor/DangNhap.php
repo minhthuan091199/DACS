@@ -199,8 +199,13 @@ if ($result = $mysqli->query($query)) {
         $field2name = $row["SDT"];
         
         if($field1name==$Tk && $field2name==$MK) {
+            if ($field1name == "admin@gmail.com"){
+                echo "<script type='text/javascript'>window.top.location='admin.php';</script>"; exit;
+            }
+                else
+                {
             echo "<script type='text/javascript'>window.top.location='ThongTinKhachHang.php".'?id='.$row['ID']."';</script>"; exit;
-
+                }
         }
         else
         {

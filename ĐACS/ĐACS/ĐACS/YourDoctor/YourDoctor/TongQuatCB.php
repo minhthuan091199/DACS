@@ -228,41 +228,18 @@
             <p>
                 <strong>Nội Dung Xét Nghiệm</strong>
             </p>
-            <p style="padding-left: 30px;">
-                <!--if sp list -->
-                1.&nbsp;&nbsp;&nbsp;
-                "Công thức máu: Phát hiện thiếu máu, các rối loạn về máu, nhiễm trùng, bệnh bạch cầu…"
-            </p>
-            <p style="padding-left: 30px;">
-                <!--if sp list -->
-                2.&nbsp;&nbsp;&nbsp;
-                "Đường (glucose), mỡ (cholesterol) toàn phần, LDL, HDL, Triglyceride: Đánh giá nguy cơ hoặc theo dõi bệnh đái tháo đường, tim mạch, xơ vữa động mạch."
-            </p>
-            <p style="padding-left: 30px;">
-                <!--if sp list -->
-                3.&nbsp;&nbsp;&nbsp;
-                " Chức năng gan (SGOT, SGPT, GGT): Đánh giá tình trạng hoạt động của gan, phát hiện các bất thường trong chức năng gan."
-            </p>
-            <p style="padding-left: 30px;">
-                <!--if sp list -->
-                4.&nbsp;&nbsp;&nbsp;
-                " HBsAg/ Anti HBs: Xét nghiệm viêm gan B hoặc đánh giá tình trạng miễn dịch nếu đã tiêm ngừa."
-            </p>
-            <p style="padding-left: 30px;">
-                <!--if sp list -->
-                5.&nbsp;&nbsp;&nbsp;
-                "Chức năng thận Creatinine, Ure: Đánh giá chức năng bài tiết và tái hấp thụ của thận, phát hiện các rối loạn hoạt động của thận."
-            </p>
-            <p style="padding-left: 30px;">
-                <!--if sp list -->
-                6.&nbsp;&nbsp;&nbsp;
-                " Uric acid: Đánh giá nguy cơ bệnh Gout."
-            </p>
-            <p style="padding-left: 30px;">
-                <!--if sp list -->
-                6.&nbsp;&nbsp;&nbsp;
-                "Tổng phân tích nước tiểu: Phát hiện cái rối loạn về thận, gan, máu,… qua 18 thông số nước tiểu."
-            </p>
+            <?php 
+            
+
+            $str = $row['Mô Tả']; 
+            $ls_str = explode("\n", $str);
+            for($i = 0; $i < count($ls_str); ++$i) {
+                echo '<p style="padding-left: 30px;">'.$ls_str[$i].'</p>' ;
+            }
+            
+            ?>
+           
+           
             <p class="product-price"><span class="old-price"></span><?php echo $row['DonGia']; ?> </p>
             <p class="product-desc">Bước 1: Điều dưỡng eDoctor đến tận nhà để lấy mẫu xét nghiệm và chuyển đến Trung tâm Y Khoa Medic – Hòa Hảo để tiến hành các phân tích.
 
